@@ -1,0 +1,119 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Mon Apr 22 23:05:50 2024
+| Host         : My-PC running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file processor_control_sets_placed.rpt
+| Design       : processor
+| Device       : xc7a35t
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    41 |
+|    Minimum number of control sets                        |    41 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   106 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    41 |
+| >= 0 to < 4        |    13 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |    19 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              65 |           34 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              19 |           11 |
+| Yes          | No                    | No                     |              23 |           10 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             195 |           60 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------+--------------------------------+--------------------+------------------+----------------+
+|      Clock Signal     |          Enable Signal         |  Set/Reset Signal  | Slice Load Count | Bel Load Count |
++-----------------------+--------------------------------+--------------------+------------------+----------------+
+|  clock_OBUF_BUFG      | r2/registers[12][7]_i_1__0_n_0 | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[3][5]_i_1_n_0     | reset_IBUF         |                2 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[10][6]_i_1_n_0    | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[15][7]_i_1__0_n_0 | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[2][4]_i_1_n_0     | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[4][5]_i_1_n_0     | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[8][6]_i_1_n_0     | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[7][6]_i_1_n_0     | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[9][6]_i_1_n_0     | reset_IBUF         |                1 |              2 |
+|  clock_OBUF_BUFG      | r2/registers[5][5]_i_1_n_0     | reset_IBUF         |                1 |              3 |
+|  clock_OBUF_BUFG      | r2/registers[14][7]_i_1__0_n_0 | reset_IBUF         |                1 |              3 |
+|  clock_OBUF_BUFG      | r2/registers[13][7]_i_1__0_n_0 | reset_IBUF         |                1 |              3 |
+|  clock_OBUF_BUFG      | r2/registers[11][6]_i_1_n_0    | reset_IBUF         |                1 |              3 |
+|  real_clock_IBUF_BUFG | displayAdd_IBUF[4]             |                    |                2 |              4 |
+|  Enclock_BUFG         |                                | reset_IBUF         |                3 |              5 |
+|  clock_OBUF_BUFG      |                                | reset_IBUF         |                4 |              6 |
+|  Enclock_BUFG         | writeData[7]_i_2_n_0           | writeData[7]       |                1 |              7 |
+|  Enclock_BUFG         |                                | alu/EXT[7]_i_1_n_0 |                4 |              8 |
+|  Enclock_BUFG         | alu/result[7]_i_1_n_0          |                    |                5 |              8 |
+|  Enclock_BUFG         | r/registers[1][7]_i_1_n_0      | reset_IBUF         |                3 |              8 |
+|  Enclock_BUFG         | r/registers[15][7]_i_1_n_0     | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[0][7]_i_1_n_0      | reset_IBUF         |                2 |              8 |
+|  Enclock_BUFG         | r/registers[4][7]_i_1_n_0      | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[11][7]_i_1_n_0     | reset_IBUF         |                2 |              8 |
+|  Enclock_BUFG         | r/registers[12][7]_i_1_n_0     | reset_IBUF         |                3 |              8 |
+|  Enclock_BUFG         | r/registers[5][7]_i_1_n_0      | reset_IBUF         |                4 |              8 |
+|  Enclock_BUFG         | r/registers[10][7]_i_1_n_0     | reset_IBUF         |                2 |              8 |
+|  Enclock_BUFG         | r/registers[14][7]_i_1_n_0     | reset_IBUF         |                3 |              8 |
+|  Enclock_BUFG         | r/registers[2][7]_i_1_n_0      | reset_IBUF         |                3 |              8 |
+|  Enclock_BUFG         | r/registers[13][7]_i_1_n_0     | reset_IBUF         |                2 |              8 |
+|  Enclock_BUFG         | r/registers[8][7]_i_1_n_0      | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[6][7]_i_1_n_0      | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[9][7]_i_1_n_0      | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[3][7]_i_1_n_0      | reset_IBUF         |                1 |              8 |
+|  Enclock_BUFG         | r/registers[7][7]_i_1_n_0      | reset_IBUF         |                2 |              8 |
+|  Enclock_BUFG         | ACC[7]_i_1_n_0                 | reset_IBUF         |                1 |              8 |
+|  clock_OBUF_BUFG      |                                |                    |                8 |             10 |
+|  Enclock_BUFG         | inst[7]_i_1__0_n_0             |                    |                3 |             11 |
+|  Enclock_BUFG         |                                |                    |               12 |             18 |
+|  Enclock_BUFG         | readAdd[3]_i_1_n_0             | reset_IBUF         |               12 |             22 |
+|  real_clock_IBUF_BUFG |                                |                    |               14 |             37 |
++-----------------------+--------------------------------+--------------------+------------------+----------------+
+
+
